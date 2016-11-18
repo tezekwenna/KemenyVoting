@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Fri Nov 11 01:59:51 2016
+
+@author: tobez
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Spyder Editor
 
 This is a temporary script file.
@@ -36,7 +43,8 @@ def weightedMajorityGraph(preferences):
     for vote in preferences:
         for i in range(len(vote)):
             for j in range(i + 1, len(vote)):
-                comps[[vote[i], vote[j]]] = comps.get([vote[i], vote[j]], 0) + 1
+                comps[(vote[i], vote[j])] = comps.get((vote[i], vote[j]), 0) + 1
+    return comps
         #for cand1, cand2 in zip(vote, vote[1:])       
         
 def main():
@@ -61,8 +69,8 @@ def main():
     #for alt in alternatives:
     #    print (alt)
     #print (alternatives)
-    #print (borda(votes))
-    #print ([3,4] == [3,4])
-    
+    print (borda(votes))
+    print ([3,4] == [3,4])
+    print (weightedMajorityGraph(votes))
     
 main()
