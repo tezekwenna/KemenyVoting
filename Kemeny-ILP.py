@@ -1,5 +1,3 @@
-import io
-import math
 import itertools
 from prefpy.mechanism import Mechanism
 
